@@ -22,7 +22,7 @@ public class TestBase {
 
         String login = config.login();
         String password = config.password();
-        String url = browserConfig.remoteDriverUrl();
+        String url = config.remoteDriverUrl();
         String browser = browserConfig.browser();
         String browserVersion = browserConfig.browserVersion();
         String browserSize = browserConfig.browserSize();

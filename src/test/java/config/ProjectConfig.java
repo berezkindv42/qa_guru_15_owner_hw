@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "system:properties",
-        "classpath:src/test/resources/config/local.properties"
+        "classpath:config/local.properties"
 })
 public interface ProjectConfig extends Config {
 
@@ -14,5 +14,4 @@ public interface ProjectConfig extends Config {
     String browserVersion();
     @DefaultValue("1920x1080")
     String browserSize();
-    String remoteDriverUrl();
 }

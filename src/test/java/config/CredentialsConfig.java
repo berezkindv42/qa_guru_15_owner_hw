@@ -7,6 +7,8 @@ import org.aeonbits.owner.Config;
         "classpath:config/credentials.properties"
 })
 public interface CredentialsConfig extends Config {
+
     String login();
     String password();
+    String remoteDriverUrl();
 }
