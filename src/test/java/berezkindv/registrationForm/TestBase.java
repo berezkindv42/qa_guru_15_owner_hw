@@ -17,7 +17,7 @@ public class TestBase {
     @Step("Конфигурируем браузер и удаленный запуск")
     static void beforeAllMethod() {
 
-        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
         ProjectConfig browserConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
 
         String login = config.login();
