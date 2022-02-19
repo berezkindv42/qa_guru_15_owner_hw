@@ -18,7 +18,8 @@ public class TestBase {
     static void beforeAllMethod() {
 
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-        ProjectConfig browserConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+//        ProjectConfig browserConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+        ProjectConfig browserConfig = ConfigFactory.create(ProjectConfig.class);
 
         String login = config.login();
         String password = config.password();
