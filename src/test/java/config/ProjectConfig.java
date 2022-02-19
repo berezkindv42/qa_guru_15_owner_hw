@@ -2,10 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-//        "system:properties",
-        "classpath:config/local.properties"
-})
+@Config.Sources("classpath:config/local.properties")
 public interface ProjectConfig extends Config {
 
     @DefaultValue("chrome")
