@@ -3,7 +3,10 @@ package berezkindv.registrationForm;
 import berezkindv.helpers.Attach;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import config.CredentialsConfig;
+import config.ProjectConfig;
 import io.qameta.allure.Step;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,12 +17,15 @@ public class TestBase {
     @Step("Конфигурируем браузер и удаленный запуск")
     static void beforeAllMethod() {
 
-        String login = System.getProperty("login");
-        String password = System.getProperty("password");
-        String url = System.getProperty("url");
-        String browser = System.getProperty("browser");
-        String browserVersion = System.getProperty("version");
-        String browserSize = System.getProperty("browserSize");
+        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+        ProjectConfig browserConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+
+        String login = config.login();
+        String password = config.password();
+        String url = browserConfig.remoteDriverUrl();
+        String browser = browserConfig.browser();
+        String browserVersion = browserConfig.browserVersion();
+        String browserSize = browserConfig.browserSize();
         String remoteUrl = "https://" + login + ":" + password + "@" + url;
 
         Configuration.browser = browser;
