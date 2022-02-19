@@ -53,3 +53,9 @@ tasks.withType(Test) {
         }
     }
 }
+
+task owner_tests(type: Test) {
+    useJUnitPlatform{
+        includeTags "owner"
+    }
+}
