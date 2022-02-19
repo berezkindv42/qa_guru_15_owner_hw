@@ -3,8 +3,8 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "system:properties",
-        "classpath:config/credentials.properties"
+        "classpath:src/test/resources/config/credentials.properties",
+        "system:properties"
 })
 public interface CredentialsConfig extends Config {
 
