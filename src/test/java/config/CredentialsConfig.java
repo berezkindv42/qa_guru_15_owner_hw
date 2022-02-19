@@ -2,9 +2,10 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:src/test/resources/config/credentials.properties",
-        "system:properties"
+        "system:properties",
+        "classpath:src/test/resources/config/credentials.properties"
 })
 public interface CredentialsConfig extends Config {
 
